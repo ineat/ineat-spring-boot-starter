@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2018 The Ineat Lab team (ilab-team@ineat-conseil.fr)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ineat-group.lab</groupId>
+    <artifactId>ineat-spring-boot-starter</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <description>Provides a set of utilities configurations for spring-boot</description>
+    <url>https://github.com/ineat</url>
+    <inceptionYear>2018</inceptionYear>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.10.RELEASE</version>
+    </parent>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/ineat/ineat-spring-boot-starter/issues</url>
+    </issueManagement>
+
+    <scm>
+        <url>https://github.com/ineat/ineat-spring-boot-starter</url>
+        <connection>scm:git:git://github.com/ineat/ineat-spring-boot-starter</connection>
+        <developerConnection>scm:git:git@github.com/ineat/ineat-spring-boot-starter</developerConnection>
+    </scm>
+
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-nexus-staging</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <organization>
+        <name>Ineat Group</name>
+        <url>https://ineat-group.com/</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <email>ludovic.dussart@ineat-conseil.fr</email>
+            <name>Ludovic DUSSART</name>
+            <url>https://github.com/M3lkior</url>
+            <id>M3lkior</id>
+        </developer>
+
+    </developers>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- aspectj for spring AOP -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <skipAfterFailureCount>1</skipAfterFailureCount>
+                        <useSystemClassLoader>false</useSystemClassLoader>
+                        <reuseForks>true</reuseForks>
+                        <parallel>classes</parallel>
+                        <useUnlimitedThreads>true</useUnlimitedThreads>
+                    </configuration>
+                </plugin>
+
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <goals>deploy</goals>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
+
+                        <pushChanges>false</pushChanges>
+                        <localCheckout>true</localCheckout>
+
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>2.11</version>
+                    <configuration>
+                        <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+
+                        <properties>
+                            <owner>The Ineat Lab team</owner>
+                            <email>ilab-team@ineat-conseil.fr</email>
+
+                        </properties>
+                        <excludes>
+                            <exclude>LICENSE.txt</exclude>
+                            <exclude>**/README</exclude>
+                            <exclude>src/test/resources/**</exclude>
+                            <exclude>src/main/resources/**</exclude>
+                        </excludes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <phase>validate</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>sonatype-nexus-staging</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+
+
+
+    </build>
+
+
+
+</project>
