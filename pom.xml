@@ -21,7 +21,7 @@
 
     <groupId>com.ineat-group.lab</groupId>
     <artifactId>ineat-spring-boot-starter</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1-SNAPSHOT</version>
     <description>Provides a set of utilities configurations for spring-boot</description>
     <url>https://github.com/ineat</url>
     <inceptionYear>2018</inceptionYear>
@@ -48,7 +48,7 @@
         <url>https://github.com/ineat/ineat-spring-boot-starter</url>
         <connection>scm:git:git://github.com/ineat/ineat-spring-boot-starter</connection>
         <developerConnection>scm:git:git@github.com/ineat/ineat-spring-boot-starter</developerConnection>
-      <tag>0.1.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
 
