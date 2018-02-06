@@ -89,7 +89,7 @@ Result on logs :
 
 
 ```
-#### SimpleTraceInterceptor
+#### PerformanceMonitorInterceptor
 
 ```yaml
 ineat:
