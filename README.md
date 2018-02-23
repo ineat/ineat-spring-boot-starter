@@ -13,7 +13,18 @@
 </p>
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ineat-group.lab/ineat-spring-boot-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava)
+![quality](https://sonarcloud.io/api/project_badges/measure?project=com.ineat-group.lab%3Aineat-spring-boot-starter&metric=alert_status
+)
 
+> ![coverage](https://sonarcloud.io/api/project_badges/measure?project=com.ineat-group.lab%3Aineat-spring-boot-starter&metric=coverage)
+![bugs](https://sonarcloud.io/api/project_badges/measure?project=com.ineat-group.lab%3Aineat-spring-boot-starter&metric=bugs)
+![code_smells](https://sonarcloud.io/api/project_badges/measure?project=com.ineat-group.lab%3Aineat-spring-boot-starter&metric=code_smells)
+![duplicated_lines_density](https://sonarcloud.io/api/project_badges/measure?project=com.ineat-group.lab%3Aineat-spring-boot-starter&metric=duplicated_lines_density)
+![ncloc](https://sonarcloud.io/api/project_badges/measure?project=com.ineat-group.lab%3Aineat-spring-boot-starter&metric=ncloc)
+![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=com.ineat-group.lab%3Aineat-spring-boot-starter&metric=vulnerabilities)
+![reliability_rating](https://sonarcloud.io/api/project_badges/measure?project=com.ineat-group.lab%3Aineat-spring-boot-starter&metric=reliability_rating)
+![security_rating](https://sonarcloud.io/api/project_badges/measure?project=com.ineat-group.lab%3Aineat-spring-boot-starter&metric=security_rating)
+ 
 ## Why ?
 
 The main idea of this library is to provide a set of Spring Boot AutoConfigurations for commons needs in business
